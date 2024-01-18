@@ -14,7 +14,5 @@ if __name__ == '__main__':
     widget.show()
     sys.exit(app.exec())
 
-def fun(self):
-    print("In fun def")
 
     
