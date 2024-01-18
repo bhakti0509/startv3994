@@ -104,3 +104,6 @@ rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255,
         Widget.setWindowTitle(translate("Widget", "Python Library by C2W"))
         self.c2w_pushButton.setText(translate("Widget", "Click Here 👇"))
         self.c2w_aboutbtn.setText(translate("Widget", "Enquire us"))
+
+    def run():
+        pass

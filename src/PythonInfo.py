@@ -162,3 +162,6 @@ class Ui_C2W_PythonInfoDialog(object):
 
         self.c2w_tabWidget.setTabText(self.c2w_tabWidget.indexOf(self.c2w_tab_4),
         _translate("Widget", "Practice"))       
+
+def Gun():
+    pass
