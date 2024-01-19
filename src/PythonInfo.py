@@ -4,6 +4,7 @@ from PyQt5.QtGui import QPixmap, QImage
 from PIL import Image
 import fitz # PyMuPDF
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 class C2W_PythonInfo(object):
     def infoPage(self, parent):
         self.c2w_dialog = QtWidgets.QDialog(parent)
@@ -130,17 +131,17 @@ class Ui_C2W_PythonInfoDialog(object):
         self.c2w_tab_3.setStyleSheet("background-color: #C3C3C3;")
 
         # Add PDFViewer to the Introduction tab
-        self.c2w_pdf_viewer = PDFViewer('./assets/pdf/python Intro.pdf')
+        self.c2w_pdf_viewer = PDFViewer('./assets/pdf/Introduction to Python.pdf')
         layout = QtWidgets.QVBoxLayout(self.c2w_tab)
         layout.addWidget(self.c2w_pdf_viewer)
 
         # Add PDFViewer to the History tab
-        self.c2w_pdf_viewer = PDFViewer('./assets/pdf/python History.pdf')
+        self.c2w_pdf_viewer = PDFViewer('./assets/pdf/Python History.pdf')
         layout = QtWidgets.QVBoxLayout(self.c2w_tab_2)
         layout.addWidget(self.c2w_pdf_viewer)
 
         # Add PDFViewer to the Index Tab
-        self.c2w_pdf_viewer = PDFViewer('./assets/pdf/python index.pdf')
+        self.c2w_pdf_viewer = PDFViewer('./assets/pdf/Index Tab.pdf')
         layout = QtWidgets.QVBoxLayout(self.c2w_tab_3)
         layout.addWidget(self.c2w_pdf_viewer)
         self.retranslateUi(Widget)

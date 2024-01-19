@@ -40,11 +40,12 @@ class C2W_Home(object):
         
         #Set style on image
         #set the pixmap the Qlable
+        
         self.c2w_imageLabel1.setPixmap(pixmap1)
         self.c2w_imageLabel1.mouseDoubleClickEvent = self.c2w_openLink
 
         self.c2w_aboutbtn = QtWidgets.QPushButton(self.c2w_widget)
-        self.c2w_aboutbtn.saveGeometry(QtCore.QRect(int(monitor_width/1.13),5,140,40))
+        self.c2w_aboutbtn.setGeometry(QtCore.QRect(int(monitor_width/1.13),5,140,40))
         self.c2w_aboutbtn.setStyleSheet("background:red; font-size:20px; border-radius:15px; color:white;")
         self.c2w_aboutbtn.setObjectName("aboutbtn")
         self.c2w_aboutbtn.clicked.connect(self.c2w_aboutCall)
@@ -52,7 +53,7 @@ class C2W_Home(object):
         self.c2w_frame = QtWidgets.QFrame(Widget)
         self.c2w_frame.setGeometry(QtCore.QRect(0,50,monitor_width,monitor_height))
         self.c2w_frame.setStyleSheet("background:#2B3D5B;\n" "font-style: poppins")
-        self.c2w_frame.setFrameShape(QtWidgets.QFrame.StyledPane1)
+        self.c2w_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.c2w_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.c2w_frame.setObjectName("frame")
         self.c2w_widget_2 = QtWidgets.QWidget(self.c2w_frame)
@@ -73,7 +74,7 @@ rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255,
         self.c2w_imageLabel.setGeometry(QtCore.QRect(60, 95, 221, 181))
         self.c2w_imageLabel.setObjectName("imageLabel")
         # Load an image of python logo using QPixmap
-        pixmap = QtGui.QPixmap('./assets/images/copy.png')
+        pixmap = QtGui.QPixmap('./assets/images/copy.jpg')
         # Set Style on image
         # Set the pixmap to the QLabel
         self.c2w_imageLabel.setPixmap(pixmap)
