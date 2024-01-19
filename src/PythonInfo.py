@@ -35,23 +35,22 @@ class PDFViewer(QtWidgets.QWidget):
         # Iterate through each page and add it to the QGraphicsScene
         y_position = 0
         for page_number in range(pdf_document.page_count):
-             page = pdf_document.load_page(page_number)
+            page = pdf_document.load_page(page_number)
+            image = page.get_pixmap()
+        
+            # Convert PyMuPDF Pixmap to PIL Image
+            pil_image = Image.frombytes("RGB", (image.width, image.height),image.samples)
 
-        image = page.get_pixmap()
-    
-        # Convert PyMuPDF Pixmap to PIL Image
-        pil_image = Image.frombytes("RGB", (image.width, image.height),image.samples)
+            # Convert PIL Image to QImage
+            qimage = QImage(pil_image.tobytes(), pil_image.width, pil_image.height,QImage.Format_RGB888)
 
-        # Convert PIL Image to QImage
-        qimage = QImage(pil_image.tobytes(), pil_image.width, pil_image.height,QImage.Format_RGB888)
-
-        # Convert QImage to QPixmap
-        pixmap = QPixmap.fromImage(qimage)
-        # Create QGraphicsPixmapItem and add to the scene
-        image_item = QGraphicsPixmapItem(pixmap)
-        image_item.setPos(0, y_position)
-        y_position += image_item.pixmap().height()
-        self.c2w_pdf_scene.addItem(image_item)
+            # Convert QImage to QPixmap
+            pixmap = QPixmap.fromImage(qimage)
+            # Create QGraphicsPixmapItem and add to the scene
+            image_item = QGraphicsPixmapItem(pixmap)
+            image_item.setPos(0, y_position)
+            y_position += image_item.pixmap().height()
+            self.c2w_pdf_scene.addItem(image_item)
 
         # Close the PDF document
         pdf_document.close()   
@@ -84,7 +83,7 @@ class Ui_C2W_PythonInfoDialog(object):
         self.c2w_imageLabel1.setObjectName("imageLabel")
 
         # Load an image using QPixmap
-        pixmap1 = QtGui.QPixmap('./assets/images/Group 943logo.png')
+        pixmap1 = QtGui.QPixmap('./assets/images/pythonlogo.jpg')
 
         # Set Style on image
         # Set the pixmap to the QLabel
