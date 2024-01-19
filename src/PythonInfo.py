@@ -8,7 +8,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class C2W_PythonInfo(object):
     def infoPage(self, parent):
         self.c2w_dialog = QtWidgets.QDialog(parent)
-        self.c2w_ui = Ui_C2W_PythonInfoDialog(object)
+        self.c2w_ui = Ui_C2W_PythonInfoDialog()
         self.c2w_ui.setupUi(self.c2w_dialog)
         self.c2w_dialog.show()
 
