@@ -32,16 +32,17 @@ class C2W_Home(object):
 
         #Create a QLabel for the image
         self.c2w_imageLabel1 = QtWidgets.QLabel(self.c2w_widget)
-        self.c2w_imageLabel1.setGeometry(QtCore.QRect(15,0,200,50))
+        self.c2w_imageLabel1.setGeometry(QtCore.QRect(0,0,50,50))
         self.c2w_imageLabel1.setObjectName("imageLabel")
 
         #Load an image using QPixmap
-        pixmap1 = QtGui.QPixmap('./assets/images/pythonlogo.jpg')
-        
+        pixmap1 = QtGui.QPixmap('./assets/images/copy(1).jpg')
+
         #Set style on image
         #set the pixmap the Qlable
         
         self.c2w_imageLabel1.setPixmap(pixmap1)
+
         self.c2w_imageLabel1.mouseDoubleClickEvent = self.c2w_openLink
 
         self.c2w_aboutbtn = QtWidgets.QPushButton(self.c2w_widget)
@@ -74,7 +75,7 @@ rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255,
         self.c2w_imageLabel.setGeometry(QtCore.QRect(60, 95, 221, 181))
         self.c2w_imageLabel.setObjectName("imageLabel")
         # Load an image of python logo using QPixmap
-        pixmap = QtGui.QPixmap('./assets/images/copy.jpg')
+        pixmap = QtGui.QPixmap('./assets/images/pythonlogo.jpg')
         # Set Style on image
         # Set the pixmap to the QLabel
         self.c2w_imageLabel.setPixmap(pixmap)
@@ -93,7 +94,7 @@ rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255,
         self.c2w_pushButton.clicked.connect(self.c2w_open_python_info)
         self.retranslateUi(Widget)
         icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
-        'assets', 'images', 'core2web Logo.png'))
+        'assets', 'images', 'copy.jpg'))
         Widget.setWindowIcon(QIcon(icon_path))
     def c2w_open_python_info(self):
         self.c2w_ui.infoPage(self.c2w_widget.parent())
