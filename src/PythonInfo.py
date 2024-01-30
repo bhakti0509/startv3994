@@ -145,7 +145,7 @@ class Ui_C2W_PythonInfoDialog(object):
         layout.addWidget(self.c2w_pdf_viewer)
         self.retranslateUi(Widget)
         self.c2w_tabWidget.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(Widget)
+        QtCore.QMetaObject.connectSlotsByName(Widget)   
 
     def retranslateUi(self, Widget):
         _translate = QtCore.QCoreApplication.translate
